@@ -1,3 +1,20 @@
+# 🔉 Pavan Kumar | Game Audio Engineer Portfolio
+![Rockstar Audio Engineer Banner](https://via.placeholder.com/1920x400/000000/e62429?text=ROCKSTAR+STYLE+AUDIO+PORTFOLIO)
+
+## 🎧 Featured Project: WESTCITY
+[![SoundCloud](https://img.shields.io/badge/SoundCloud-WESTCITY_Samples-FF3300?logo=soundcloud)](https://on.soundcloud.com/CcABlPwoHdFy8cLRi2)
+[![YouTube Demo](https://img.shields.io/badge/YouTube-Gameplay_Reel-FF0000?logo=youtube)](YOUR_YT_LINK)
+
+### Technical Implementation Highlights
+```csharp
+// C# Example: Dynamic Weapon SFX in Unity
+void PlayWeaponSFX(string weaponType, float distance) {
+    string eventPath = $"event:/Weapons/{weaponType}";
+    FMOD.Studio.EventInstance instance = FMODUnity.RuntimeManager.CreateInstance(eventPath);
+    instance.setParameterByName("Distance", distance);
+    instance.start();
+    instance.release();
+}
 ### **Audio Middleware**  
 [![FMOD](https://img.shields.io/badge/FMOD-Expert-FF9900)](https://www.fmod.com) 
 [![Wwise](https://img.shields.io/badge/Wwise-Intermediate-0085FF)](https://www.audiokinetic.com)  
