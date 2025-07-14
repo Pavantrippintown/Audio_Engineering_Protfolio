@@ -1,8 +1,7 @@
 # 🔉 Pavan Kumar | Game Audio Engineer  
-![Rockstar Banner](https://via.placeholder.com/1920x400/000000/e62429?text=ROCKSTAR-LEVEL+OPEN+WORLD+AUDIO+SYSTEMS)
 
 ## 🚀 **About Me**  
-*Audio architect specializing in Rockstar-grade systems. 5+ years building:*
+*Audio architect specializing in Rockstar-grade systems. 2+ years building:*
 - **Physics-driven soundscapes** (Vehicle/Weapon DSP modeling)
 - **Systemic audio** (GTA-style world reactivity)
 - **AAA-optimized pipelines** (Wwise/FMOD + Unreal/Unity)
