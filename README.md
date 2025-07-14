@@ -16,3 +16,9 @@ graph LR
     A --> C[Road Noise Synthesis]
     D[Combat] --> E[Bullet Penetration Tails]
     D --> F[3D Reverb Zones]
+## 🎸 Rockstar-Ready Audio Systems
+| Feature | Implementation | Relevant to R* Projects |
+|---------|----------------|-------------------------|
+| Dynamic Vehicle Engine | FMOD RPM/Load parameters + Unreal Blueprint | GTA-style car physics |
+| Weapon Tail System | Wwise Convolution Reverb per surface type | RDR2 ballistic impacts |
+| Ambient Zones | Biome-aware mixer snapshots | Open-world immersion |
