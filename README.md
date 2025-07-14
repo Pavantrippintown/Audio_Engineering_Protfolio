@@ -1,12 +1,18 @@
 # 🔉 Pavan Kumar | Game Audio Engineer  
 ![Rockstar Banner](https://via.placeholder.com/1920x400/000000/e62429?text=BUILDING+IMMERSIVE+WORLDS+THROUGH+SOUND)
 
-## 🎧 Featured Projects
-### **WESTCITY** - Open-World Crime Simulator  
-[![Demo](https://img.shields.io/badge/PLAY_DEMO-FF0000?style=for-the-badge&logo=unity)](YOUR_DEMO_LINK)  
+## 🚀 **About Me**  
+*Rockstar-style audio engineer specializing in open-world systems with 5+ years crafting AAA-ready soundscapes. Obsessed with physics-based audio and systemic implementation.*
+
+---
+
+## 🎧 **Featured Projects**
+
+### 🔫 **WESTCITY** (GTA-style Open World)  
+[![Demo](https://img.shields.io/badge/PLAY_SAMPLES-FF3300?style=for-the-badge&logo=soundcloud)](https://on.soundcloud.com/CcABlPwoHdFy8cLRi2)  
 ```mermaid
-graph TD
-    A[Vehicle Systems] --> B[Engine RPM Modeling]
-    A --> C[Tire Surface Detection]
-    D[Gunplay] --> E[Material-Based Impacts]
-    D --> F[Bullet Whiz Doppler]
+graph LR
+    A[Vehicle Systems] --> B[Engine Load Modeling]
+    A --> C[Road Noise Synthesis]
+    D[Combat] --> E[Bullet Penetration Tails]
+    D --> F[3D Reverb Zones]
