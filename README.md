@@ -12,7 +12,6 @@
 
 ### 🔫 **WESTCITY** (GTA-style Open World)  
 [![Demo](https://img.shields.io/badge/PLAY_SAMPLES-FF3300?style=for-the-badge&logo=soundcloud)](https://on.soundcloud.com/CcABlPwoHdFy8cLRi2)  
-[![Code](https://img.shields.io/badge/VIEW_CODE-239120?style=for-the-badge&logo=github)](https://github.com/yourrepo)
 
 ```mermaid
 graph TD
