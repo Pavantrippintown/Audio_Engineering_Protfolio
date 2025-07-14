@@ -1,5 +1,5 @@
 # 🔉 Pavan Kumar | Game Audio Engineer  
-![Rockstar Banner](https://via.placeholder.com/1920x400/000000/e62429?text=BUILDING+IMMERSIVE+WORLDS+THROUGH+SOUND)
+
 
 ## 🚀 **About Me**  
 *Rockstar-style audio engineer specializing in open-world systems with 5+ years crafting AAA-ready soundscapes. Obsessed with physics-based audio and systemic implementation.*
