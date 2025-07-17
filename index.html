@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pavan Kumar | Game Audio Designer</title>
+    <title>Pavan Kumar | Game Audio Designer for Rockstar Games</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -16,6 +16,8 @@
             --glass-bg: rgba(10, 10, 10, 0.85);
             --gta-yellow: #f5e10a;
             --gta-black: #0c0c0c;
+            --rdr-brown: #8B4513;
+            --rdr-cream: #F5DEB3;
         }
 
         body {
@@ -30,7 +32,7 @@
             background-position: center;
         }
 
-        /* Loading Animation */
+        /* Loading Animation - GTA Style */
         .loading-screen {
             position: fixed;
             top: 0;
@@ -78,8 +80,23 @@
             to { opacity: 1; }
         }
 
-        /* GTA Character */
-        .gta-character {
+        /* Rockstar Theme Elements */
+        .rockstar-theme {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: 0.05;
+            background: 
+                radial-gradient(circle at 20% 30%, var(--accent-red), transparent 70%),
+                radial-gradient(circle at 80% 70%, var(--gta-yellow), transparent 70%);
+        }
+
+        /* GTA/RDR Character */
+        .character-container {
             position: fixed;
             bottom: -100px;
             right: -100px;
@@ -87,10 +104,26 @@
             height: 500px;
             z-index: -1;
             opacity: 0.2;
-            background: url('https://i.gifer.com/7VE.gif') no-repeat center center;
-            background-size: contain;
-            filter: sepia(100%) hue-rotate(180deg) brightness(0.8);
             animation: float 8s ease-in-out infinite;
+        }
+
+        .character {
+            width: 100%;
+            height: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center center;
+            transition: all 1s ease;
+        }
+
+        .character.gta {
+            background-image: url('https://i.gifer.com/7VE.gif');
+            filter: sepia(100%) hue-rotate(180deg) brightness(0.8);
+        }
+
+        .character.rdr {
+            background-image: url('https://i.gifer.com/embedded/download/7VE.gif');
+            filter: sepia(100%) brightness(0.8);
         }
 
         @keyframes float {
@@ -98,7 +131,7 @@
             50% { transform: translateY(-30px) translateX(-30px); }
         }
 
-        /* Navigation */
+        /* Navigation - Rockstar Style */
         nav {
             position: fixed;
             width: 100%;
@@ -132,8 +165,8 @@
         }
 
         nav a:hover {
-            color: var(--accent-red);
-            text-shadow: 0 0 15px rgba(230, 36, 41, 0.9);
+            color: var(--gta-yellow);
+            text-shadow: 0 0 15px rgba(245, 225, 10, 0.9);
         }
 
         nav a::after {
@@ -143,7 +176,7 @@
             height: 3px;
             bottom: -5px;
             left: 0;
-            background: var(--accent-red);
+            background: var(--gta-yellow);
             transition: width 0.3s;
         }
 
@@ -151,7 +184,7 @@
             width: 100%;
         }
 
-        /* Hero Section */
+        /* Hero Section - Rockstar Cinematic */
         .hero {
             height: 100vh;
             display: flex;
@@ -160,6 +193,7 @@
             position: relative;
             text-align: center;
             padding: 0 40px;
+            overflow: hidden;
         }
 
         .hero::before {
@@ -171,6 +205,17 @@
             height: 100%;
             background: radial-gradient(circle, rgba(10,10,10,0.6) 0%, rgba(0,0,0,0.95) 100%);
             z-index: -1;
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+            opacity: 0.4;
         }
 
         .hero-content {
@@ -188,7 +233,7 @@
             margin-bottom: 30px;
             text-shadow: 5px 5px 0 #000;
             letter-spacing: 5px;
-            color: var(--accent-gold);
+            color: var(--gta-yellow);
             font-weight: 700;
             text-transform: uppercase;
             position: relative;
@@ -213,6 +258,29 @@
             font-weight: 500;
         }
 
+        .rockstar-passion {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(230, 36, 41, 0.2);
+            border-left: 5px solid var(--gta-yellow);
+            font-size: 1.3rem;
+            line-height: 1.6;
+            text-align: left;
+            position: relative;
+        }
+
+        .rockstar-passion::before {
+            content: '"';
+            position: absolute;
+            top: -30px;
+            left: 20px;
+            font-size: 8rem;
+            color: rgba(230, 36, 41, 0.3);
+            font-family: serif;
+            line-height: 1;
+        }
+
         .btn {
             display: inline-block;
             padding: 20px 50px;
@@ -230,6 +298,7 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
+            margin: 10px;
         }
 
         .btn:hover {
@@ -238,33 +307,27 @@
             animation: btnPulse 1.5s infinite;
         }
 
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: rgba(255,255,255,0.1);
-            transform: rotate(45deg);
-            pointer-events: none;
-            transition: all 0.3s;
-            opacity: 0;
+        .btn-rockstar {
+            background: linear-gradient(135deg, var(--gta-yellow), #ff8c00);
+            box-shadow: 0 10px 25px rgba(245, 225, 10, 0.5);
         }
 
-        .btn:hover::before {
-            animation: btnShine 1.5s;
+        .btn-rockstar:hover {
+            box-shadow: 0 15px 30px rgba(245, 225, 10, 0.8);
+        }
+
+        .btn-rdr {
+            background: linear-gradient(135deg, var(--rdr-brown), #5D2E1F);
+            box-shadow: 0 10px 25px rgba(139, 69, 19, 0.5);
+        }
+
+        .btn-rdr:hover {
+            box-shadow: 0 15px 30px rgba(139, 69, 19, 0.8);
         }
 
         @keyframes btnPulse {
             0%, 100% { transform: translateY(-5px) scale(1); }
             50% { transform: translateY(-5px) scale(1.05); }
-        }
-
-        @keyframes btnShine {
-            0% { opacity: 0; left: -50%; }
-            50% { opacity: 0.5; }
-            100% { opacity: 0; left: 150%; }
         }
 
         /* Demo Reel Section */
@@ -320,35 +383,105 @@
             border: none;
         }
 
-        /* Radio Selector */
-        .radio-selector {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            margin-top: 50px;
+        /* Rockstar Inspiration Section */
+        .rockstar-inspiration {
+            padding: 100px 40px;
+            background: linear-gradient(to right, var(--bg-dark), #1a1a1a);
+            text-align: center;
+            position: relative;
         }
 
-        .radio-btn {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
+        .inspiration-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 60px auto;
+        }
+
+        .game-card {
             background: var(--glass-bg);
-            border: 3px solid var(--accent-gold);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: bold;
-            font-size: 1.5rem;
-            color: var(--accent-gold);
-            backdrop-filter: blur(5px);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.4s;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(230, 36, 41, 0.3);
+            position: relative;
+            min-height: 400px;
         }
 
-        .radio-btn:hover {
-            background: var(--accent-red);
-            transform: scale(1.15);
-            box-shadow: 0 0 25px var(--accent-red);
+        .game-card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 25px 50px rgba(230, 36, 41, 0.4);
+            border-color: var(--accent-red);
+        }
+
+        .game-card.gta {
+            border-color: rgba(245, 225, 10, 0.3);
+        }
+
+        .game-card.gta:hover {
+            box-shadow: 0 25px 50px rgba(245, 225, 10, 0.4);
+            border-color: var(--gta-yellow);
+        }
+
+        .game-card.rdr {
+            border-color: rgba(139, 69, 19, 0.3);
+        }
+
+        .game-card.rdr:hover {
+            box-shadow: 0 25px 50px rgba(139, 69, 19, 0.4);
+            border-color: var(--rdr-brown);
+        }
+
+        .game-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s;
+            filter: brightness(0.8);
+        }
+
+        .game-card:hover img {
+            transform: scale(1.1);
+            filter: brightness(1);
+        }
+
+        .game-info {
+            padding: 30px;
+            text-align: left;
+        }
+
+        .game-info h3 {
+            margin-top: 0;
+            color: var(--accent-gold);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .game-card.gta h3 {
+            color: var(--gta-yellow);
+        }
+
+        .game-card.rdr h3 {
+            color: var(--rdr-cream);
+        }
+
+        .game-analysis {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-top: 20px;
+            color: #ccc;
+        }
+
+        .game-card.gta .game-analysis {
+            color: #eee;
+        }
+
+        .game-card.rdr .game-analysis {
+            color: var(--rdr-cream);
         }
 
         /* Projects Section */
@@ -523,6 +656,50 @@
             filter: drop-shadow(0 5px 10px rgba(0,0,0,0.7));
         }
 
+        /* Rockstar Dream Section */
+        .rockstar-dream {
+            padding: 150px 40px;
+            text-align: center;
+            position: relative;
+            background: url('https://images.unsplash.com/photo-1560253023-3ec5d502959f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+        }
+
+        .rockstar-dream::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 10, 0.9);
+            z-index: 0;
+        }
+
+        .dream-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .rockstar-logo {
+            width: 300px;
+            margin: 0 auto 50px;
+            filter: drop-shadow(0 0 20px rgba(230, 36, 41, 0.7));
+        }
+
+        .dream-statement {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+            padding: 40px;
+            background: rgba(10, 10, 10, 0.7);
+            border-left: 5px solid var(--accent-red);
+            border-right: 5px solid var(--gta-yellow);
+        }
+
         /* Contact Section */
         .contact {
             padding: 150px 40px;
@@ -598,6 +775,41 @@
             clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
             opacity: 0.8;
         }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 3rem;
+            }
+            
+            .subtitle {
+                font-size: 1.5rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            nav ul {
+                gap: 15px;
+            }
+            
+            nav a {
+                font-size: 0.9rem;
+                padding: 5px 10px;
+            }
+            
+            .project-grid, .inspiration-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .character-container {
+                width: 300px;
+                height: 300px;
+                right: -50px;
+                bottom: -50px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -609,15 +821,22 @@
         </div>
     </div>
 
-    <!-- GTA Character -->
-    <div class="gta-character"></div>
+    <!-- Rockstar Theme Elements -->
+    <div class="rockstar-theme"></div>
+
+    <!-- GTA/RDR Character -->
+    <div class="character-container">
+        <div class="character gta" id="character"></div>
+    </div>
 
     <!-- Navigation -->
     <nav>
         <ul>
             <li><a href="#demo-reel" class="menu-link">Demo Reel</a></li>
+            <li><a href="#inspiration" class="menu-link">Inspiration</a></li>
             <li><a href="#projects" class="menu-link">Projects</a></li>
             <li><a href="#skills" class="menu-link">Skills</a></li>
+            <li><a href="#dream" class="menu-link">Rockstar Dream</a></li>
             <li><a href="#contact" class="menu-link">Contact</a></li>
         </ul>
         <audio class="menu-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3"></audio>
@@ -625,10 +844,21 @@
 
     <!-- Hero Section -->
     <section class="hero">
+        <video class="hero-video" autoplay muted loop>
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-city-traffic-at-night-1084-large.mp4" type="video/mp4">
+        </video>
         <div class="hero-content">
             <h1>Pavan Kumar P</h1>
             <p class="subtitle">Game Audio Designer & Sound Engineer</p>
-            <a href="#demo-reel" class="btn">View My Demo Reel</a>
+            
+            <div class="rockstar-passion">
+                <p>Passionate about creating immersive audio experiences that rival Rockstar Games' legendary soundscapes. Inspired by the dynamic audio systems of GTA and the atmospheric richness of Red Dead Redemption, I strive to bring that same level of detail and immersion to every project.</p>
+            </div>
+            
+            <div>
+                <a href="#demo-reel" class="btn">View My Demo Reel</a>
+                <a href="#dream" class="btn btn-rockstar">My Rockstar Dream</a>
+            </div>
         </div>
     </section>
 
@@ -636,7 +866,7 @@
     <section id="demo-reel" class="demo-reel">
         <div class="demo-reel-content">
             <h2 class="section-title">Demo Reel</h2>
-            <p style="font-size: 1.5rem;">showcase of game audio works</p>
+            <p style="font-size: 1.5rem;">Showcase of game audio works inspired by Rockstar's attention to detail</p>
             
             <div class="video-container">
                <iframe width="560" height="315" src="https://www.youtube.com/embed/C9XHTDemgG4?si=KG-OXSyTH5EnpoLi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
@@ -647,11 +877,64 @@
             <div class="video-container">
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/tGRfaHydcFg?si=spkayXasHyxIdUgy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/_7-u8XJ2hSU?si=xd69HoEfAO7MGUOy&modestbranding=1&rel=0&autoplay=0&controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- Rockstar Inspiration Section -->
+    <section id="inspiration" class="rockstar-inspiration">
+        <h2 class="section-title">My Rockstar Inspirations</h2>
+        <p style="font-size: 1.5rem; margin-bottom: 60px;">Analyzing the audio mastery that fuels my passion</p>
+        
+        <div class="inspiration-grid">
+            <div class="game-card gta">
+                <img src="https://images.unsplash.com/photo-1638548422885-80e0e8a7e9e9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="GTA Series">
+                <div class="game-info">
+                    <h3>Grand Theft Auto Series</h3>
+                    <div class="game-analysis">
+                        <p>The GTA series sets the gold standard for open-world audio design. I'm particularly inspired by:</p>
+                        <ul>
+                            <li>Dynamic radio systems with contextual commentary</li>
+                            <li>Realistic vehicle sound layers based on speed/damage</li>
+                            <li>Detailed ambient soundscapes that bring cities to life</li>
+                            <li>Brilliant use of licensed music to enhance gameplay</li>
+                        </ul>
+                        <p>In my work, I emulate these principles to create similarly immersive experiences.</p>
+                    </div>
+                </div>
             </div>
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/OOLBZBbAVnY?si=JE3fFHVwGIBuxctx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            
+            <div class="game-card rdr">
+                <img src="https://images.unsplash.com/photo-1586810726945-bb37e7c5b022?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Red Dead Redemption 2">
+                <div class="game-info">
+                    <h3>Red Dead Redemption 2</h3>
+                    <div class="game-analysis">
+                        <p>RDR2's audio is a masterpiece of environmental storytelling. Key influences:</p>
+                        <ul>
+                            <li>Hyper-realistic foley work for weapons and movement</li>
+                            <li>Dynamic wildlife sound systems</li>
+                            <li>Weather systems that affect audio propagation</li>
+                            <li>Brilliant voice acting with contextual dialogue</li>
+                        </ul>
+                        <p>I study these techniques to bring similar authenticity to my projects.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="game-card">
+                <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Other Rockstar Titles">
+                <div class="game-info">
+                    <h3>Other Rockstar Titles</h3>
+                    <div class="game-analysis">
+                        <p>Across all Rockstar games, I admire:</p>
+                        <ul>
+                            <li>Consistent audio quality across massive game worlds</li>
+                            <li>Innovative use of middleware (Wwise, FMOD)</li>
+                            <li>Attention to small details that create immersion</li>
+                            <li>Perfect balance between realism and gameplay needs</li>
+                        </ul>
+                        <p>These principles guide my approach to game audio design.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -659,6 +942,7 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <h2 class="section-title">Featured Projects</h2>
+        <p style="font-size: 1.5rem; text-align: center; margin-bottom: 60px;">Applying Rockstar-inspired techniques to my work</p>
         
         <div class="project-grid">
             <div class="project-card">
@@ -672,7 +956,7 @@
                         <i class="fas fa-star star"></i>
                         <i class="fas fa-star-half-alt star"></i>
                     </div>
-                    <p style="font-size: 1.1rem; line-height: 1.6;">Designed and implemented 50+ futuristic weapon sounds using granular synthesis in Pro Tools And also in FLStudio, implemented in Unity with FMOD.</p>
+                    <p style="font-size: 1.1rem; line-height: 1.6;">Designed and implemented 50+ futuristic weapon sounds using granular synthesis in Pro Tools and FL Studio, with dynamic layering inspired by GTA's weapon audio system. Implemented in Unity with FMOD for real-time parameter control.</p>
                 </div>
             </div>
             
@@ -687,7 +971,7 @@
                         <i class="fas fa-star star"></i>
                         <i class="fas fa-star star"></i>
                     </div>
-                    <p style="font-size: 1.1rem; line-height: 1.6;">Created dynamic biome-specific ambient loops with randomized event triggers in Wwise for an indie open-world game.</p>
+                    <p style="font-size: 1.1rem; line-height: 1.6;">Created dynamic biome-specific ambient loops with randomized event triggers in Wwise for an indie open-world game, taking inspiration from RDR2's regional soundscapes. Implemented weather transitions and time-of-day variations.</p>
                 </div>
             </div>
             
@@ -702,7 +986,7 @@
                         <i class="fas fa-star star"></i>
                         <i class="far fa-star star"></i>
                     </div>
-                    <p style="font-size: 1.1rem; line-height: 1.6;">Developed adaptive music transitions for combat scenarios using FMOD's parameter system and Unity integration.</p>
+                    <p style="font-size: 1.1rem; line-height: 1.6;">Developed adaptive music transitions for combat scenarios using FMOD's parameter system and Unity integration, studying GTA's approach to music transitions. Created horizontal resequencing and vertical layering for dynamic tension.</p>
                 </div>
             </div>
         </div>
@@ -712,56 +996,84 @@
     <section id="skills" class="skills">
         <div class="skills-content">
             <h2 class="section-title">Technical Skills</h2>
+            <p style="font-size: 1.5rem; margin-bottom: 60px;">Mastering the tools that power Rockstar's audio magic</p>
             
             <div class="skills-grid">
                 <div class="skill-item">
                     <i class="fas fa-volume-up"></i>
                     <h3>Sound Design</h3>
                     <p style="font-size: 1.1rem;">Weapons, Foley, Ambience</p>
+                    <p style="font-size: 0.9rem; color: #aaa; margin-top: 10px;">(Rockstar-level quality)</p>
                 </div>
                 
                 <div class="skill-item">
                     <i class="fab fa-unity"></i>
                     <h3>Unity Audio</h3>
                     <p style="font-size: 1.1rem;">Implementation, Mixing</p>
+                    <p style="font-size: 0.9rem; color: #aaa; margin-top: 10px;">(Inspired by RDR2 systems)</p>
                 </div>
                 
                 <div class="skill-item">
                     <i class="fas fa-wave-square"></i>
                     <h3>Wwise/FMOD</h3>
                     <p style="font-size: 1.1rem;">Middleware Integration</p>
+                    <p style="font-size: 0.9rem; color: #aaa; margin-top: 10px;">(Used in GTA/RDR)</p>
                 </div>
                 
                 <div class="skill-item">
                     <i class="fas fa-code"></i>
                     <h3>Audio Scripting</h3>
                     <p style="font-size: 1.1rem;">C#, Python</p>
+                    <p style="font-size: 0.9rem; color: #aaa; margin-top: 10px;">(For dynamic systems)</p>
                 </div>
 
                 <div class="skill-item">
-                    <img src="avid-logo-desktop.svg" alt="Pro Tools" class="daw-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Avid_Technology_logo.svg/1200px-Avid_Technology_logo.svg.png" alt="Pro Tools" class="daw-logo">
                     <h3>Pro Tools</h3>
                     <p style="font-size: 1.1rem;">Recording, Editing, Mixing</p>
+                    <p style="font-size: 0.9rem; color: #aaa; margin-top: 10px;">(Industry standard)</p>
                 </div>
                 
                 <div class="skill-item">
-                    <img src="fl.png" alt="FL Studio" class="daw-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/FL_Studio_21_logo.svg/1200px-FL_Studio_21_logo.svg.png" alt="FL Studio" class="daw-logo">
                     <h3>FL Studio</h3>
                     <p style="font-size: 1.1rem;">Music Production, SFX Design</p>
+                    <p style="font-size: 0.9rem; color: #aaa; margin-top: 10px;">(For original compositions)</p>
                 </div>
 
                 <div class="skill-item">
                     <i class="fas fa-microphone-alt"></i>
                     <h3>Voice Processing</h3>
-                    <p style="font-size: 1.1rem;">ADR, Noise Reduction, Pitch Correction</p>
+                    <p style="font-size: 1.1rem;">ADR, Noise Reduction</p>
+                    <p style="font-size: 0.9rem; color: #aaa; margin-top: 10px;">(RDR2-quality dialogue)</p>
                 </div>
                 
                 <div class="skill-item">
                     <i class="fas fa-headphones"></i>
                     <h3>Spatial Audio</h3>
                     <p style="font-size: 1.1rem;">Ambisonics, Binaural, HRTF</p>
+                    <p style="font-size: 0.9rem; color: #aaa; margin-top: 10px;">(Next-gen immersion)</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Rockstar Dream Section -->
+    <section id="dream" class="rockstar-dream">
+        <div class="dream-content">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Rockstar_Games_Logo.svg/1200px-Rockstar_Games_Logo.svg.png" alt="Rockstar Games" class="rockstar-logo">
+            
+            <div class="dream-statement">
+                <p>My ultimate career aspiration is to contribute to the legendary audio teams at Rockstar Games. The way they create living, breathing worlds through sound has been my greatest inspiration since I first experienced the immersive streets of GTA or the authentic wilderness of Red Dead Redemption.</p>
+                
+                <p>I've dedicated my career to studying and emulating Rockstar's audio techniques, from their dynamic systems to their meticulous attention to detail. Every project I undertake is approached with the same level of passion and commitment to quality that Rockstar is known for.</p>
+                
+                <p>I believe my skills in sound design, middleware implementation, and interactive audio systems would allow me to make meaningful contributions to future Rockstar titles. I'm particularly excited about the possibilities of next-generation audio in upcoming projects like GTA 6.</p>
+                
+                <p>This portfolio represents my journey toward that dream - a demonstration of my ability to deliver Rockstar-quality audio work.</p>
+            </div>
+            
+            <a href="#contact" class="btn btn-rockstar">Let's Make Gaming History</a>
         </div>
     </section>
 
@@ -769,7 +1081,7 @@
     <section id="contact" class="contact">
         <h2 class="section-title">Let's Work Together</h2>
         <p style="font-size: 1.5rem;">Currently available for full-time positions</p>
-        <p style="font-size: 1.5rem;">"Hey! Check out the samples I’ve created and processed for our game WESTCITY—it started as a fun project with friends, and I handled the sound design. You can listen to them on SoundCloud! Let me know what you think. 🎶🔥"</p>
+        <p style="font-size: 1.5rem;">"Hey! Check out the samples I've created and processed for our game WESTCITY—it started as a fun project with friends, and I handled the sound design. You can listen to them on SoundCloud! Let me know what you think. 🎶🔥"</p>
         <div class="social-links">
             <a href="mailto:pavan.trippintown@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
             <a href="https://linkedin.com/in/pavan-kumar-p-741041169" class="social-link"><i class="fab fa-linkedin"></i></a>
@@ -789,7 +1101,7 @@
             <div class="wanted-star"></div>
             <div class="wanted-star"></div>
         </div>
-        <p style="font-size: 1.3rem;">&copy; 2024 Pavan Kumar P | Game Audio Designer</p>
+        <p style="font-size: 1.3rem;">&copy; 2024 Pavan Kumar P | Future Rockstar Games Audio Designer</p>
     </footer>
 
     <script>
@@ -810,21 +1122,33 @@
                         loadingScreen.style.opacity = '0';
                         setTimeout(() => {
                             loadingScreen.style.display = 'none';
-                            showNotification('PORTFOLIO LOADED');
+                            showNotification('PORTFOLIO LOADED - WELCOME TO MY WORLD OF SOUND');
                         }, 1000);
                     }, 500);
                 }
             }, 200);
         });
 
-        // Character Movement
-        document.addEventListener('mousemove', (e) => {
-            const character = document.querySelector('.gta-character');
-            const x = e.clientX / window.innerWidth;
-            const y = e.clientY / window.innerHeight;
+        // Character Switching Between GTA and RDR
+        const character = document.getElementById('character');
+        const games = ['gta', 'rdr'];
+        let currentGame = 0;
+        
+        function switchCharacter() {
+            currentGame = (currentGame + 1) % games.length;
+            character.className = 'character ' + games[currentGame];
             
-            character.style.transform = `translate(${x * 40 - 20}px, ${y * 40 - 20}px)`;
-        });
+            // Play appropriate ambient sound
+            const sound = new Audio(
+                games[currentGame] === 'gta' ? 
+                'https://assets.mixkit.co/sfx/preview/mixkit-city-traffic-ambience-1245.mp3' :
+                'https://assets.mixkit.co/sfx/preview/mixkit-nature-ambience-1187.mp3'
+            );
+            sound.volume = 0.2;
+            sound.play();
+        }
+        
+        setInterval(switchCharacter, 15000);
 
         // Smooth Scrolling with Sound
         document.querySelectorAll('.menu-link').forEach(anchor => {
@@ -838,15 +1162,6 @@
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
                 });
-            });
-        });
-
-        // Radio Button Sounds
-        document.querySelectorAll('.radio-btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                const sound = new Audio(this.getAttribute('data-sound'));
-                sound.play();
-                showNotification('STATION ' + this.textContent);
             });
         });
 
@@ -865,10 +1180,12 @@
         });
 
         // Button Hover Sound
-        document.querySelector('.btn').addEventListener('mouseenter', function() {
-            const sound = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-unlock-game-notification-253.mp3');
-            sound.volume = 0.5;
-            sound.play();
+        document.querySelectorAll('.btn').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                const sound = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-unlock-game-notification-253.mp3');
+                sound.volume = 0.5;
+                sound.play();
+            });
         });
 
         // Show Notification
@@ -911,6 +1228,26 @@
 
         window.addEventListener('scroll', animateOnScroll);
         animateOnScroll();
+
+        // Rockstar Easter Egg
+        let konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
+        let konamiIndex = 0;
+        
+        document.addEventListener('keydown', (e) => {
+            if (e.key === konamiCode[konamiIndex]) {
+                konamiIndex++;
+                if (konamiIndex === konamiCode.length) {
+                    konamiIndex = 0;
+                    showNotification('ROCKSTAR MODE ACTIVATED!');
+                    document.body.style.filter = 'sepia(50%) hue-rotate(180deg)';
+                    setTimeout(() => {
+                        document.body.style.filter = 'none';
+                    }, 3000);
+                }
+            } else {
+                konamiIndex = 0;
+            }
+        });
     </script>
 </body>
 </html>
