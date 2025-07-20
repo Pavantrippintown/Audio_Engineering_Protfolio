@@ -30,9 +30,10 @@
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
+            transition: filter 0.5s ease;
         }
 
-        /* Loading Animation - GTA Style */
+        /* Loading Animation */
         .loading-screen {
             position: fixed;
             top: 0;
@@ -131,7 +132,7 @@
             50% { transform: translateY(-30px) translateX(-30px); }
         }
 
-        /* Navigation - Rockstar Style */
+        /* Navigation */
         nav {
             position: fixed;
             width: 100%;
@@ -184,7 +185,7 @@
             width: 100%;
         }
 
-        /* Hero Section - Rockstar Cinematic */
+        /* Hero Section */
         .hero {
             height: 100vh;
             display: flex;
@@ -656,6 +657,31 @@
             filter: drop-shadow(0 5px 10px rgba(0,0,0,0.7));
         }
 
+        /* Certifications Section */
+        .certifications {
+            margin-top: 80px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .certification-card {
+            background: var(--glass-bg);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 2px solid var(--accent-blue);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+        }
+
+        .certification-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 168, 255, 0.3);
+            border-color: var(--accent-blue);
+        }
+
         /* Rockstar Dream Section */
         .rockstar-dream {
             padding: 150px 40px;
@@ -749,6 +775,59 @@
             font-size: 1.2rem;
         }
 
+        /* Easter Egg Notification */
+        .easter-egg-notification {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(230, 36, 41, 0.9);
+            color: var(--gta-yellow);
+            padding: 20px 40px;
+            border-radius: 5px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            z-index: 10000;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0,0,0,0.7);
+            animation: pulse 0.5s infinite alternate;
+        }
+
+        /* Easter Egg Hint Styles */
+        .easter-egg-hint {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            opacity: 0.1;
+            transition: opacity 0.5s;
+            z-index: 100;
+            cursor: help;
+        }
+        
+        .easter-egg-hint:hover {
+            opacity: 0.7;
+            animation: bounce 0.5s infinite alternate;
+        }
+        
+        @keyframes bounce {
+            from { transform: translateY(0); }
+            to { transform: translateY(-5px); }
+        }
+        
+        .secret-footer-hint {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 0.8rem;
+            opacity: 0.5;
+            transition: opacity 0.3s;
+        }
+        
+        .secret-footer-hint:hover {
+            opacity: 0.9;
+        }
+
         /* Footer */
         footer {
             padding: 50px;
@@ -809,6 +888,19 @@
                 right: -50px;
                 bottom: -50px;
             }
+
+            .certification-card {
+                padding: 20px;
+            }
+
+            .certification-card img {
+                width: 120px;
+            }
+            
+            .easter-egg-hint {
+                bottom: 70px;
+                right: 10px;
+            }
         }
     </style>
 </head>
@@ -829,6 +921,11 @@
         <div class="character gta" id="character"></div>
     </div>
 
+    <!-- Easter Egg Visual Hint -->
+    <div class="easter-egg-hint" title="Something hidden here...">
+        <img src="ester.png" width="40" alt="Secret icon">
+    </div>
+
     <!-- Navigation -->
     <nav>
         <ul>
@@ -839,7 +936,6 @@
             <li><a href="#dream" class="menu-link">Rockstar Dream</a></li>
             <li><a href="#contact" class="menu-link">Contact</a></li>
         </ul>
-        <audio class="menu-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-select-click-1109.mp3"></audio>
     </nav>
 
     <!-- Hero Section -->
@@ -998,14 +1094,13 @@
         </div>
     </section>
 
-      <!-- Skills Section -->
+    <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="skills-content">
             <h2 class="section-title">Technical Skills</h2>
             <p style="font-size: 1.5rem; margin-bottom: 60px;">Mastering the tools that power Rockstar's audio magic</p>
             
             <div class="skills-grid">
-                <!-- Audio Production -->
                 <div class="skill-item">
                     <i class="fas fa-volume-up"></i>
                     <h3>Sound Design</h3>
@@ -1013,7 +1108,6 @@
                     <p style="font-size: 0.9rem; color: #aaa; margin-top: 10px;">(Rockstar-level quality)</p>
                 </div>
                 
-                <!-- Game Engines -->
                 <div class="skill-item">
                     <i class="fab fa-unity"></i>
                     <h3>Unity Audio</h3>
@@ -1021,7 +1115,6 @@
                     <p style="font-size: 0.9rem; color: #aaa; margin-top: 10px;">(Inspired by RDR2 systems)</p>
                 </div>
                 
-                <!-- Middleware -->
                 <div class="skill-item">
                     <i class="fas fa-wave-square"></i>
                     <h3>Wwise/FMOD</h3>
@@ -1029,7 +1122,6 @@
                     <p style="font-size: 0.9rem; color: #aaa; margin-top: 10px;">(Dynamic audio systems)</p>
                 </div>
                 
-                <!-- Source Control -->
                 <div class="skill-item">
                     <i class="fas fa-code-branch"></i>
                     <h3>Source Control</h3>
@@ -1041,7 +1133,6 @@
                     </p>
                 </div>
 
-                <!-- DAWs -->
                 <div class="skill-item">
                     <img src="rpp.jpg" alt="REAPER" class="daw-logo">
                     <h3>REAPER</h3>
@@ -1067,7 +1158,6 @@
                     <p style="font-size: 0.9rem; color: #aaa; margin-top: 10px;">(For original compositions)</p>
                 </div>
                 
-                <!-- Microphone Techniques -->
                 <div class="skill-item">
                     <i class="fas fa-microphone"></i>
                     <h3>Mic Theory</h3>
@@ -1079,7 +1169,6 @@
                     </p>
                 </div>
 
-                <!-- Programming -->
                 <div class="skill-item">
                     <i class="fas fa-code"></i>
                     <h3>Audio Scripting</h3>
@@ -1091,6 +1180,33 @@
                     </p>
                 </div>
             </div>
+
+            <!-- Certifications Section -->
+            <div class="certifications">
+                <h3 style="font-size: 2rem; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 40px;">Certifications</h3>
+                
+                <div class="certification-card">
+                    <div style="display: flex; align-items: center; gap: 30px; flex-wrap: wrap; justify-content: center;">
+                        <img src="linkedin.svg" alt="LinkedIn Learning Certificate" style="width: 150px; height: auto;">
+                        <div style="text-align: left;">
+                            <h4 style="font-size: 1.8rem; margin: 0 0 10px 0; color: var(--accent-blue);">LinkedIn Learning Certificate</h4>
+                            <p style="font-size: 1.2rem; margin: 0 0 15px 0; color: white;">Game Audio & Sound Effects</p>
+                            <p style="font-size: 1rem; color: #ccc; line-height: 1.6;">
+                                Completed professional training in game audio development, covering:<br>
+                                - Game sound design principles<br>
+                                - Interactive audio implementation<br>
+                                - Sound effect creation techniques<br>
+                                - Audio middleware integration<br>
+                                - Mixing for games
+                            </p>
+                            <a href="https://www.linkedin.com/learning/certificates/842e0bd3c68a16208a30fd7d0a087666bf08f8389fa02ec9db593f7f2525cbde" style="color: var(--accent-blue); text-decoration: none; font-weight: bold; display: inline-block; margin-top: 15px;" target="_blank">
+                                Verify Certificate <i class="fas fa-external-link-alt"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Rockstar Dream Section -->
@@ -1137,9 +1253,65 @@
             <div class="wanted-star"></div>
         </div>
         <p style="font-size: 1.3rem;">&copy; 2024 Pavan Kumar P | Future Rockstar Games Audio Designer</p>
+        
+        <!-- Easter Egg Footer Hint -->
+        <div class="secret-footer-hint">
+            <p>Pro Tip: Classic gamers might know a special cheat code...</p>
+        </div>
     </footer>
 
     <script>
+        // Initialize audio context
+        let audioContext;
+        function initAudio() {
+            try {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const oscillator = audioContext.createOscillator();
+                oscillator.connect(audioContext.destination);
+                oscillator.start();
+                oscillator.stop(audioContext.currentTime + 0.001);
+            } catch (e) {
+                console.log("Audio init error:", e);
+            }
+        }
+        
+        // Working Sound URLs
+        const sounds = {
+            menuClick: 'click.wav',
+            achievement: 'click.wav',
+            coin: 'click.wav',
+            unlock: 'un.wav',
+            cityAmbience: 'amb.mp3',
+            natureAmbience: 'nature.wave',
+            easterEgg: 'eastereg.mp3'
+        };
+
+        // Audio Play Function with Fallback
+        async function playSound(url, volume = 1) {
+            return new Promise((resolve) => {
+                try {
+                    const audio = new Audio(url);
+                    audio.volume = volume;
+                    audio.play()
+                        .then(resolve)
+                        .catch(e => {
+                            console.log("Audio play failed:", e);
+                            resolve();
+                        });
+                } catch (e) {
+                    console.log("Audio creation error:", e);
+                    resolve();
+                }
+            });
+        }
+
+        // Initialize audio on first interaction
+        document.body.addEventListener('click', initAudio, { once: true });
+        
+        // Console Hint
+        console.log('%cPsst... Want a secret? Try the Konami code! (↑↑↓↓←→←→BA)', 
+                    'color: #e62429; font-size: 14px; font-weight: bold;');
+
         // Loading Screen Animation
         window.addEventListener('load', function() {
             const loadingBar = document.getElementById('loadingBar');
@@ -1155,9 +1327,17 @@
                     clearInterval(interval);
                     setTimeout(() => {
                         loadingScreen.style.opacity = '0';
+                        
+                        // Show loading hint if first visit
+                        if (!localStorage.getItem('visited')) {
+                            showNotification('Pro Tip: Old-school gamers might find something special...');
+                            localStorage.setItem('visited', 'true');
+                        } else {
+                            showNotification('PORTFOLIO LOADED - WELCOME TO MY WORLD OF SOUND');
+                        }
+                        
                         setTimeout(() => {
                             loadingScreen.style.display = 'none';
-                            showNotification('PORTFOLIO LOADED - WELCOME TO MY WORLD OF SOUND');
                         }, 1000);
                     }, 500);
                 }
@@ -1173,14 +1353,14 @@
             currentGame = (currentGame + 1) % games.length;
             character.className = 'character ' + games[currentGame];
             
-            // Play appropriate ambient sound
-            const sound = new Audio(
-                games[currentGame] === 'gta' ? 
-                'https://assets.mixkit.co/sfx/preview/mixkit-city-traffic-ambience-1245.mp3' :
-                'https://assets.mixkit.co/sfx/preview/mixkit-nature-ambience-1187.mp3'
-            );
-            sound.volume = 0.2;
-            sound.play();
+            const soundUrl = games[currentGame] === 'gta' 
+                ? sounds.cityAmbience 
+                : sounds.natureAmbience;
+            
+            document.body.addEventListener('click', function handler() {
+                playSound(soundUrl, 0.2);
+                this.removeEventListener('click', handler);
+            }, { once: true });
         }
         
         setInterval(switchCharacter, 15000);
@@ -1190,9 +1370,10 @@
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 
-                const menuSound = document.querySelector('.menu-sound');
-                menuSound.currentTime = 0;
-                menuSound.play();
+                document.body.addEventListener('click', function handler() {
+                    playSound(sounds.menuClick);
+                    this.removeEventListener('click', handler);
+                }, { once: true });
                 
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
@@ -1204,8 +1385,12 @@
         document.querySelectorAll('.social-link').forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
-                const sound = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-arcade-game-jump-coin-216.mp3');
-                sound.play();
+                
+                document.body.addEventListener('click', function handler() {
+                    playSound(sounds.coin);
+                    this.removeEventListener('click', handler);
+                }, { once: true });
+                
                 showNotification('OPENING ' + this.querySelector('i').className.split(' ')[1].replace('fa-', '').toUpperCase());
                 
                 setTimeout(() => {
@@ -1217,9 +1402,10 @@
         // Button Hover Sound
         document.querySelectorAll('.btn').forEach(btn => {
             btn.addEventListener('mouseenter', function() {
-                const sound = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-unlock-game-notification-253.mp3');
-                sound.volume = 0.5;
-                sound.play();
+                document.body.addEventListener('click', function handler() {
+                    playSound(sounds.unlock, 0.5);
+                    this.removeEventListener('click', handler);
+                }, { once: true });
             });
         });
 
@@ -1234,9 +1420,93 @@
             }, 3000);
         }
 
+        // Rockstar Easter Egg (Konami Code) - Fixed Version
+        const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 
+                        'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 
+                        'b', 'a'];
+        let konamiIndex = 0;
+
+        // Initialize audio context first
+        function initAudioContext() {
+            try {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                console.log("Audio context initialized");
+            } catch(e) {
+                console.error("Audio context failed:", e);
+            }
+        }
+
+        // Modified keydown listener
+        document.addEventListener('keydown', (e) => {
+            // Check if the pressed key matches the current konami code position
+            if (e.key === konamiCode[konamiIndex]) {
+                konamiIndex++;
+                console.log(`Konami progress: ${konamiIndex}/${konamiCode.length}`);
+                
+                if (konamiIndex === konamiCode.length) {
+                    console.log("Konami code completed!");
+                    activateRockstarMode();
+                    konamiIndex = 0; // Reset after completion
+                }
+            } else {
+                // Reset if wrong key is pressed
+                konamiIndex = 0;
+            }
+        });
+
+        // Enhanced activation function
+        function activateRockstarMode() {
+            // Ensure audio is initialized
+            if (!audioContext) initAudioContext();
+            
+            // Mark as found in localStorage
+            localStorage.setItem('easterEggFound', 'true');
+            
+            // Create notification
+            const eggNotification = document.createElement('div');
+            eggNotification.className = 'easter-egg-notification';
+            eggNotification.innerHTML = `
+                <div>CHEAT ACTIVATED!</div>
+                <div>ROCKSTAR MODE UNLOCKED</div>
+                <small>Refresh page to reset</small>
+            `;
+            document.body.appendChild(eggNotification);
+            
+            // Visual effects
+            document.body.style.filter = 'sepia(50%) hue-rotate(10deg) saturate(200%)';
+            
+            // Play sound
+            playSound(sounds.easterEgg, 0.5).then(() => {
+                console.log("Easter egg sound played");
+            });
+            
+            // Reset after 5 seconds
+            setTimeout(() => {
+                document.body.style.filter = 'none';
+                if (eggNotification.parentNode) {
+                    eggNotification.remove();
+                }
+            }, 5000);
+        }
+
+        // Mobile Alternative (triple-tap)
+        let tapCount = 0;
+        let tapTimer;
+        document.getElementById('contact').addEventListener('click', () => {
+            clearTimeout(tapTimer);
+            tapCount++;
+            
+            if (tapCount === 3) {
+                activateRockstarMode();
+                tapCount = 0;
+            }
+            
+            tapTimer = setTimeout(() => tapCount = 0, 1000);
+        });
+
         // Animate Elements on Scroll
         const animateOnScroll = () => {
-            const elements = document.querySelectorAll('.project-card, .skill-item');
+            const elements = document.querySelectorAll('.project-card, .skill-item, .certifications');
             
             elements.forEach(el => {
                 const rect = el.getBoundingClientRect();
@@ -1246,16 +1516,17 @@
                     
                     if (!el.dataset.animated) {
                         el.dataset.animated = 'true';
-                        const sound = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-achievement-bell-600.mp3');
-                        sound.volume = 0.3;
-                        sound.play();
+                        document.body.addEventListener('click', function handler() {
+                            playSound(sounds.achievement, 0.3);
+                            this.removeEventListener('click', handler);
+                        }, { once: true });
                     }
                 }
             });
         };
 
         // Set Initial State
-        document.querySelectorAll('.project-card, .skill-item').forEach(el => {
+        document.querySelectorAll('.project-card, .skill-item, .certifications').forEach(el => {
             el.style.opacity = '0';
             el.style.transform = 'translateY(50px)';
             el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
@@ -1263,26 +1534,6 @@
 
         window.addEventListener('scroll', animateOnScroll);
         animateOnScroll();
-
-        // Rockstar Easter Egg
-        let konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
-        let konamiIndex = 0;
-        
-        document.addEventListener('keydown', (e) => {
-            if (e.key === konamiCode[konamiIndex]) {
-                konamiIndex++;
-                if (konamiIndex === konamiCode.length) {
-                    konamiIndex = 0;
-                    showNotification('ROCKSTAR MODE ACTIVATED!');
-                    document.body.style.filter = 'sepia(50%) hue-rotate(180deg)';
-                    setTimeout(() => {
-                        document.body.style.filter = 'none';
-                    }, 3000);
-                }
-            } else {
-                konamiIndex = 0;
-            }
-        });
     </script>
 </body>
 </html>
