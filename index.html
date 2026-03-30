@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pavan Kumar | Game Audio Designer for Rockstar Games</title>
+    <title>Pavan Kumar | Game QA & Audio Specialist</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -682,15 +682,15 @@
             border-color: var(--accent-blue);
         }
 
-        /* Rockstar Dream Section */
-        .rockstar-dream {
+        /* Aspirations Section (Formerly Dream) */
+        .aspirations {
             padding: 150px 40px;
             text-align: center;
             position: relative;
             background: url('https://images.unsplash.com/photo-1560253023-3ec5d502959f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
         }
 
-        .rockstar-dream::before {
+        .aspirations::before {
             content: '';
             position: absolute;
             top: 0;
@@ -857,55 +857,20 @@
 
         /* Responsive Adjustments */
         @media (max-width: 768px) {
-            h1 {
-                font-size: 3rem;
-            }
-            
-            .subtitle {
-                font-size: 1.5rem;
-            }
-            
-            .section-title {
-                font-size: 2.5rem;
-            }
-            
-            nav ul {
-                gap: 15px;
-            }
-            
-            nav a {
-                font-size: 0.9rem;
-                padding: 5px 10px;
-            }
-            
-            .project-grid, .inspiration-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .character-container {
-                width: 300px;
-                height: 300px;
-                right: -50px;
-                bottom: -50px;
-            }
-
-            .certification-card {
-                padding: 20px;
-            }
-
-            .certification-card img {
-                width: 120px;
-            }
-            
-            .easter-egg-hint {
-                bottom: 70px;
-                right: 10px;
-            }
+            h1 { font-size: 3rem; }
+            .subtitle { font-size: 1.5rem; }
+            .section-title { font-size: 2.5rem; }
+            nav ul { gap: 15px; }
+            nav a { font-size: 0.9rem; padding: 5px 10px; }
+            .project-grid, .inspiration-grid { grid-template-columns: 1fr; }
+            .character-container { width: 300px; height: 300px; right: -50px; bottom: -50px; }
+            .certification-card { padding: 20px; }
+            .certification-card img { width: 120px; }
+            .easter-egg-hint { bottom: 70px; right: 10px; }
         }
     </style>
 </head>
 <body>
-    <!-- Loading Screen -->
     <div class="loading-screen" id="loadingScreen">
         <div class="loading-text">LOADING</div>
         <div class="loading-bar-container">
@@ -913,79 +878,72 @@
         </div>
     </div>
 
-    <!-- Rockstar Theme Elements -->
     <div class="rockstar-theme"></div>
 
-    <!-- GTA/RDR Character -->
     <div class="character-container">
         <div class="character gta" id="character"></div>
     </div>
 
-    <!-- Easter Egg Visual Hint -->
     <div class="easter-egg-hint" title="Something hidden here...">
         <img src="ester.png" width="40" alt="Secret icon">
     </div>
 
-    <!-- Navigation -->
     <nav>
         <ul>
             <li><a href="#demo-reel" class="menu-link">Demo Reel</a></li>
             <li><a href="#inspiration" class="menu-link">Inspiration</a></li>
             <li><a href="#projects" class="menu-link">Projects</a></li>
             <li><a href="#skills" class="menu-link">Skills</a></li>
-            <li><a href="#dream" class="menu-link">Rockstar Dream</a></li>
+            <li><a href="#aspirations" class="menu-link">Aspirations</a></li>
             <li><a href="#contact" class="menu-link">Contact</a></li>
         </ul>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <video class="hero-video" autoplay muted loop>
             <source src="https://assets.mixkit.co/videos/preview/mixkit-city-traffic-at-night-1084-large.mp4" type="video/mp4">
         </video>
         <div class="hero-content">
             <h1>Pavan Kumar P</h1>
-            <p class="subtitle">Game Audio Designer & Sound Engineer</p>
+            <p class="subtitle">Game QA & Audio Specialist | Software Engineer</p>
             
             <div class="rockstar-passion">
-                <p>Passionate about creating immersive audio experiences that rival Rockstar Games' legendary soundscapes. Inspired by the dynamic audio systems of GTA and the atmospheric richness of Red Dead Redemption, I strive to bring that same level of detail and immersion to every project.</p>
+                <p>Passionate about ensuring immersive gaming experiences meet industry-leading quality standards. By blending my rigorous background in software testing with professional cinematic audio engineering, I strive to push the boundaries of AAA gameplay and high-fidelity soundscapes.</p>
             </div>
             
             <div>
                 <a href="#demo-reel" class="btn">View My Demo Reel</a>
-                <a href="#dream" class="btn btn-rockstar">My Rockstar Dream</a>
+                <a href="#aspirations" class="btn btn-rockstar">My QA & Audio Approach</a>
             </div>
         </div>
     </section>
 
-    <!-- Demo Reel Section -->
     <section id="demo-reel" class="demo-reel">
         <div class="demo-reel-content">
             <h2 class="section-title">Demo Reel</h2>
-            <p style="font-size: 1.5rem;">Showcase of game audio works inspired by Rockstar's attention to detail</p>
+            <p style="font-size: 1.5rem;">Showcase of cinematic audio works engineered with a critical ear</p>
             
              <div class="video-container">
-               <iframe width="560" height="315" src="https://www.youtube.com/embed/C9XHTDemgG4?si=KG-OXSyTH5EnpoLi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+               <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/C9XHTDemgG4?si=KG-OXSyTH5EnpoLi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
             <div class="video-container">
-               <iframe width="560" height="315" src="https://www.youtube.com/embed/yN4-L3fdt_Q?si=gRYixOcsTyb68zVA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+               <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/yN4-L3fdt_Q?si=gRYixOcsTyb68zVA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
             <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/tGRfaHydcFg?si=spkayXasHyxIdUgy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/tGRfaHydcFg?si=spkayXasHyxIdUgy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
             <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/_7-u8XJ2hSU?si=xd69HoEfAO7MGUOy&modestbranding=1&rel=0&autoplay=0&controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/_7-u8XJ2hSU?si=xd69HoEfAO7MGUOy&modestbranding=1&rel=0&autoplay=0&controls=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/OOLBZBbAVnY?si=JE3fFHVwGIBuxctx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe loading="lazy" width="560" height="315" src="https://www.youtube.com/embed/OOLBZBbAVnY?si=JE3fFHVwGIBuxctx" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </div>
     </section>
 
-    <!-- Rockstar Inspiration Section -->
     <section id="inspiration" class="rockstar-inspiration">
-        <h2 class="section-title">My Rockstar Inspirations</h2>
-        <p style="font-size: 1.5rem; margin-bottom: 60px;">Analyzing the audio mastery that fuels my passion</p>
+        <h2 class="section-title">My Technical Inspirations</h2>
+        <p style="font-size: 1.5rem; margin-bottom: 60px;">Analyzing the systems and audio mastery that fuel my passion for QA</p>
         
         <div class="inspiration-grid">
             <div class="game-card gta">
@@ -993,14 +951,14 @@
                 <div class="game-info">
                     <h3>Grand Theft Auto Series</h3>
                     <div class="game-analysis">
-                        <p>The GTA series sets the gold standard for open-world audio design. I'm particularly inspired by:</p>
+                        <p>The GTA series sets the gold standard for complex, open-world systems. I am particularly inspired to analyze:</p>
                         <ul>
                             <li>Dynamic radio systems with contextual commentary</li>
-                            <li>Realistic vehicle sound layers based on speed/damage</li>
+                            <li>Realistic vehicle physics and sound layers based on speed/damage</li>
                             <li>Detailed ambient soundscapes that bring cities to life</li>
-                            <li>Brilliant use of licensed music to enhance gameplay</li>
+                            <li>Edge cases in massive, interconnected NPC behavior</li>
                         </ul>
-                        <p>In my work, I emulate these principles to create similarly immersive experiences.</p>
+                        <p>In my QA approach, I meticulously test these interconnected principles.</p>
                     </div>
                 </div>
             </div>
@@ -1010,47 +968,60 @@
                 <div class="game-info">
                     <h3>Red Dead Redemption 2</h3>
                     <div class="game-analysis">
-                        <p>RDR2's audio is a masterpiece of environmental storytelling. Key influences:</p>
+                        <p>RDR2 is a masterpiece of environmental storytelling and functional mechanics. Key analytical influences:</p>
                         <ul>
                             <li>Hyper-realistic foley work for weapons and movement</li>
-                            <li>Dynamic wildlife sound systems</li>
-                            <li>Weather systems that affect audio propagation</li>
-                            <li>Brilliant voice acting with contextual dialogue</li>
+                            <li>Dynamic wildlife system interactions</li>
+                            <li>Weather systems that affect both gameplay physics and audio propagation</li>
+                            <li>Contextual dialogue branching and trigger testing</li>
                         </ul>
-                        <p>I study these techniques to bring similar authenticity to my projects.</p>
                     </div>
                 </div>
             </div>
             
             <div class="game-card">
-                <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Other Rockstar Titles">
+                <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Other AAA Titles">
                 <div class="game-info">
-                    <h3>Other Rockstar Titles</h3>
+                    <h3>AAA Game Development</h3>
                     <div class="game-analysis">
-                        <p>Across all Rockstar games, I admire:</p>
+                        <p>Across all large-scale titles, I admire and test for:</p>
                         <ul>
-                            <li>Consistent audio quality across massive game worlds</li>
-                            <li>Innovative use of middleware (Wwise, FMOD)</li>
-                            <li>Attention to small details that create immersion</li>
-                            <li>Perfect balance between realism and gameplay needs</li>
+                            <li>Consistent quality control across massive game worlds</li>
+                            <li>Innovative integration of middleware (Wwise, FMOD)</li>
+                            <li>Attention to edge cases that break player immersion</li>
+                            <li>Perfect balance between system performance and gameplay needs</li>
                         </ul>
-                        <p>These principles guide my approach to game audio design.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" class="projects">
-        <h2 class="section-title">Featured Projects</h2>
-        <p style="font-size: 1.5rem; text-align: center; margin-bottom: 60px;">Applying Rockstar-inspired techniques to my work</p>
+        <h2 class="section-title">Technical & Audio Projects</h2>
+        <p style="font-size: 1.5rem; text-align: center; margin-bottom: 60px;">Bridging software engineering logic with immersive audio design</p>
         
         <div class="project-grid">
+
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Virtual Mouse AI Project">
+                <div class="project-info">
+                    <h3>Virtual Mouse (AI Gesture Control)</h3>
+                    <div class="project-rating">
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                        <i class="fas fa-star star"></i>
+                    </div>
+                    <p style="font-size: 1.1rem; line-height: 1.6;">Developed a Python application using OpenCV for video processing and MediaPipe for real-time gesture recognition. Integrated Natural Language Processing (NLP) for voice command controls. Rigorously executed functional testing to achieve a 95% accuracy rate, demonstrating strong logic and troubleshooting capabilities.</p>
+                </div>
+            </div>
+
             <div class="project-card">
                 <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Weapon SFX Project">
                 <div class="project-info">
-                    <h3>Weapon SFX</h3>
+                    <h3>Weapon SFX Integration</h3>
                     <div class="project-rating">
                         <i class="fas fa-star star"></i>
                         <i class="fas fa-star star"></i>
@@ -1058,7 +1029,7 @@
                         <i class="fas fa-star star"></i>
                         <i class="fas fa-star-half-alt star"></i>
                     </div>
-                    <p style="font-size: 1.1rem; line-height: 1.6;">Designed and implemented 50+ futuristic weapon sounds using granular synthesis in Pro Tools and FL Studio, with dynamic layering inspired by GTA's weapon audio system. Implemented in Unity with FMOD for real-time parameter control.</p>
+                    <p style="font-size: 1.1rem; line-height: 1.6;">Designed and implemented 50+ futuristic weapon sounds using granular synthesis in Pro Tools and FL Studio. Tested and troubleshot dynamic layering implemented in Unity with FMOD for real-time parameter control, ensuring seamless playback without runtime errors.</p>
                 </div>
             </div>
             
@@ -1073,46 +1044,64 @@
                         <i class="fas fa-star star"></i>
                         <i class="fas fa-star star"></i>
                     </div>
-                    <p style="font-size: 1.1rem; line-height: 1.6;">Created dynamic biome-specific ambient loops with randomized event triggers in Wwise for an indie open-world game, taking inspiration from RDR2's regional soundscapes. Implemented weather transitions and time-of-day variations.</p>
-                </div>
-            </div>
-            
-            <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Interactive Music">
-                <div class="project-info">
-                    <h3>Interactive Music System</h3>
-                    <div class="project-rating">
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="fas fa-star star"></i>
-                        <i class="far fa-star star"></i>
-                    </div>
-                    <p style="font-size: 1.1rem; line-height: 1.6;">Developed adaptive music transitions for combat scenarios using FMOD's parameter system and Unity integration, studying GTA's approach to music transitions. Created horizontal resequencing and vertical layering for dynamic tension.</p>
+                    <p style="font-size: 1.1rem; line-height: 1.6;">Created dynamic biome-specific ambient loops with randomized event triggers in Wwise. Tested and debugged weather transitions, time-of-day variations, and spatial audio propagation to ensure reliable performance across changing game states.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills" class="skills">
         <div class="skills-content">
             <h2 class="section-title">Technical Skills</h2>
-            <p style="font-size: 1.5rem; margin-bottom: 60px;">Mastering the tools that power Rockstar's audio magic</p>
+            <p style="font-size: 1.5rem; margin-bottom: 60px;">QA Testing, Software Logic, and Professional Audio</p>
             
             <div class="skills-grid">
+                
+                <div class="skill-item">
+                    <i class="fas fa-bug"></i>
+                    <h3>Quality Assurance</h3>
+                    <p style="font-size: 1.1rem;">Testing & Analysis</p>
+                    <p style="font-size: 0.9rem; color: #aaa; margin-top: 10px;">
+                        Functional Testing<br>
+                        Runtime Troubleshooting<br>
+                        Bug Reporting
+                    </p>
+                </div>
+
+                <div class="skill-item">
+                    <i class="fab fa-python"></i>
+                    <h3>Programming</h3>
+                    <p style="font-size: 1.1rem;">Python, SQL, Scripts</p>
+                    <p style="font-size: 0.9rem; color: #aaa; margin-top: 10px;">
+                        CI/CD Pipelines<br>
+                        Test-Driven Dev (TDD)<br>
+                        Git & GitHub Actions
+                    </p>
+                </div>
+
+                <div class="skill-item">
+                    <i class="fab fa-docker"></i>
+                    <h3>Environment Ops</h3>
+                    <p style="font-size: 1.1rem;">Docker & Linux</p>
+                    <p style="font-size: 0.9rem; color: #aaa; margin-top: 10px;">
+                        Environment Maintenance<br>
+                        System Documentation<br>
+                        AWS Cloud
+                    </p>
+                </div>
+
                 <div class="skill-item">
                     <i class="fas fa-volume-up"></i>
                     <h3>Sound Design</h3>
                     <p style="font-size: 1.1rem;">Weapons, Foley, Ambience</p>
-                    <p style="font-size: 0.9rem; color: #aaa; margin-top: 10px;">(Rockstar-level quality)</p>
+                    <p style="font-size: 0.9rem; color: #aaa; margin-top: 10px;">(Cinematic Quality)</p>
                 </div>
                 
                 <div class="skill-item">
                     <i class="fab fa-unity"></i>
                     <h3>Unity Audio</h3>
                     <p style="font-size: 1.1rem;">Implementation, Mixing</p>
-                    <p style="font-size: 0.9rem; color: #aaa; margin-top: 10px;">(Inspired by RDR2 systems)</p>
+                    <p style="font-size: 0.9rem; color: #aaa; margin-top: 10px;">(Certified Associate)</p>
                 </div>
                 
                 <div class="skill-item">
@@ -1121,17 +1110,6 @@
                     <p style="font-size: 1.1rem;">Middleware Integration</p>
                     <p style="font-size: 0.9rem; color: #aaa; margin-top: 10px;">(Dynamic audio systems)</p>
                 </div>
-                
-                <div class="skill-item">
-                    <i class="fas fa-code-branch"></i>
-                    <h3>Source Control</h3>
-                    <p style="font-size: 1.1rem;">Perforce Helix Core</p>
-                    <p style="font-size: 0.9rem; color: #aaa; margin-top: 10px;">
-                        AAA pipeline workflow<br>
-                        Asset version control<br>
-                        Changelist management
-                    </p>
-                </div>
 
                 <div class="skill-item">
                     <img src="rpp.jpg" alt="REAPER" class="daw-logo">
@@ -1139,8 +1117,7 @@
                     <p style="font-size: 1.1rem;">Custom Workflows</p>
                     <p style="font-size: 0.9rem; color: #aaa; margin-top: 10px;">
                         Scripting with JSFX<br>
-                        Batch processing<br>
-                        Efficient editing
+                        Batch processing
                     </p>
                 </div>
 
@@ -1150,38 +1127,8 @@
                     <p style="font-size: 1.1rem;">Recording, Editing, Mixing</p>
                     <p style="font-size: 0.9rem; color: #aaa; margin-top: 10px;">(Industry standard)</p>
                 </div>
-
-                <div class="skill-item">
-                    <img src="fl.png" alt="FL Studio" class="daw-logo">
-                    <h3>FL Studio</h3>
-                    <p style="font-size: 1.1rem;">Music Production, SFX Design</p>
-                    <p style="font-size: 0.9rem; color: #aaa; margin-top: 10px;">(For original compositions)</p>
-                </div>
-                
-                <div class="skill-item">
-                    <i class="fas fa-microphone"></i>
-                    <h3>Mic Theory</h3>
-                    <p style="font-size: 1.1rem;">Professional Techniques</p>
-                    <p style="font-size: 0.9rem; color: #aaa; margin-top: 10px;">
-                        Polar patterns<br>
-                        Proximity effect<br>
-                        Phase coherence
-                    </p>
-                </div>
-
-                <div class="skill-item">
-                    <i class="fas fa-code"></i>
-                    <h3>Audio Scripting</h3>
-                    <p style="font-size: 1.1rem;">C#, Python, C++</p>
-                    <p style="font-size: 0.9rem; color: #aaa; margin-top: 10px;">
-                        DSP programming<br>
-                        Tool development<br>
-                        Audio middleware
-                    </p>
-                </div>
             </div>
 
-            <!-- Certifications Section -->
             <div class="certifications">
                 <h3 style="font-size: 2rem; color: var(--accent-gold); text-transform: uppercase; letter-spacing: 3px; margin-bottom: 40px;">Certifications</h3>
                 
@@ -1193,11 +1140,10 @@
                             <p style="font-size: 1.2rem; margin: 0 0 15px 0; color: white;">Unity Certified Associate Game Developer Audio and Effects</p>
                             <p style="font-size: 1rem; color: #ccc; line-height: 1.6;">
                                 Completed professional training in game audio development, covering:<br>
+                                - Interactive audio implementation & testing<br>
                                 - Game sound design principles<br>
-                                - Interactive audio implementation<br>
-                                - Sound effect creation techniques<br>
                                 - Audio middleware integration<br>
-                                - Mixing for games
+                                - System QA and spatial mixing
                             </p>
                             <a href="https://www.linkedin.com/learning/certificates/842e0bd3c68a16208a30fd7d0a087666bf08f8389fa02ec9db593f7f2525cbde" style="color: var(--accent-blue); text-decoration: none; font-weight: bold; display: inline-block; margin-top: 15px;" target="_blank">
                                 Verify Certificate <i class="fas fa-external-link-alt"></i>
@@ -1209,30 +1155,28 @@
         </div>
     </section>
 
-    <!-- Rockstar Dream Section -->
-    <section id="dream" class="rockstar-dream">
+    <section id="aspirations" class="aspirations">
         <div class="dream-content">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Rockstar_Games_Logo.svg/1200px-Rockstar_Games_Logo.svg.png" alt="Rockstar Games" class="rockstar-logo">
+            <h2 class="section-title">Elevating AAA Game Quality</h2>
             
             <div class="dream-statement">
-                <p>My ultimate career aspiration is to contribute to the legendary audio teams at Rockstar Games. The way they create living, breathing worlds through sound has been my greatest inspiration since I first experienced the immersive streets of GTA or the authentic wilderness of Red Dead Redemption.</p>
+                <p>My goal is to ensure large-scale, cinematic games meet industry-leading quality standards. By blending my rigorous background in software testing with professional audio engineering experience, I aim to help top-tier studios push the boundaries of immersive, flawless gameplay.</p>
                 
-                <p>I've dedicated my career to studying and emulating Rockstar's audio techniques, from their dynamic systems to their meticulous attention to detail. Every project I undertake is approached with the same level of passion and commitment to quality that Rockstar is known for.</p>
+                <p>Throughout my career, I have dedicated myself to exploratory testing—pushing game mechanics to their limits to uncover hidden bugs and edge cases. Every project I undertake is approached with a highly analytical mindset, supported by my Computer Science foundation.</p>
                 
-                <p>I believe my skills in sound design, middleware implementation, and interactive audio systems would allow me to make meaningful contributions to future Rockstar titles. I'm particularly excited about the possibilities of next-generation audio in upcoming projects like GTA 6.</p>
-                
-                <p>This portfolio represents my journey toward that dream - a demonstration of my ability to deliver Rockstar-quality audio work.</p>
+                <p>Furthermore, my trained ear for spatial audio, dynamic dialogue systems, and middleware implementation gives me a unique advantage when reproducing and documenting complex in-game sound issues. I am ready to bring my troubleshooting expertise and critical analysis to ambitious, world-class entertainment projects.</p>
             </div>
             
-            <a href="#contact" class="btn btn-rockstar">Let's Make Gaming History</a>
+            <a href="#contact" class="btn btn-rockstar">Let's Connect</a>
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="contact">
         <h2 class="section-title">Let's Work Together</h2>
-        <p style="font-size: 1.5rem;">Currently available for full-time positions</p>
-        <p style="font-size: 1.5rem;">"Hey! Check out the samples I've created and processed for our game WESTCITY—it started as a fun project with friends, and I handled the sound design. You can listen to them on SoundCloud! Let me know what you think. 🎶🔥"</p>
+        <p style="font-size: 1.5rem;">Currently available for full-time Game QA Testing positions</p>
+        <p style="font-size: 1.2rem; max-width: 800px; margin: 20px auto; line-height: 1.6;">
+            I am eager to bring my technical troubleshooting skills, exploratory testing mindset, and professional audio expertise to a world-class QA team. Let's connect.
+        </p>
         <div class="social-links">
             <a href="mailto:pavan.trippintown@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
             <a href="https://linkedin.com/in/pavan-kumar-p-741041169" class="social-link"><i class="fab fa-linkedin"></i></a>
@@ -1241,7 +1185,6 @@
         </div>
     </section>
 
-    <!-- Notification -->
     <div class="notification" id="notification"></div>
 
     <footer>
@@ -1252,9 +1195,8 @@
             <div class="wanted-star"></div>
             <div class="wanted-star"></div>
         </div>
-        <p style="font-size: 1.3rem;">&copy; 2024 Pavan Kumar P | Future Rockstar Games Audio Designer</p>
+        <p style="font-size: 1.3rem;">&copy; 2024 Pavan Kumar P | Game QA & Audio Specialist</p>
         
-        <!-- Easter Egg Footer Hint -->
         <div class="secret-footer-hint">
             <p>Pro Tip: Classic gamers might know a special cheat code...</p>
         </div>
@@ -1333,7 +1275,7 @@
                             showNotification('Pro Tip: Old-school gamers might find something special...');
                             localStorage.setItem('visited', 'true');
                         } else {
-                            showNotification('PORTFOLIO LOADED - WELCOME TO MY WORLD OF SOUND');
+                            showNotification('PORTFOLIO LOADED - WELCOME');
                         }
                         
                         setTimeout(() => {
@@ -1420,13 +1362,12 @@
             }, 3000);
         }
 
-        // Rockstar Easter Egg (Konami Code) - Fixed Version
+        // Rockstar Easter Egg (Konami Code)
         const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 
                         'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 
                         'b', 'a'];
         let konamiIndex = 0;
 
-        // Initialize audio context first
         function initAudioContext() {
             try {
                 audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -1436,9 +1377,7 @@
             }
         }
 
-        // Modified keydown listener
         document.addEventListener('keydown', (e) => {
-            // Check if the pressed key matches the current konami code position
             if (e.key === konamiCode[konamiIndex]) {
                 konamiIndex++;
                 console.log(`Konami progress: ${konamiIndex}/${konamiCode.length}`);
@@ -1446,23 +1385,18 @@
                 if (konamiIndex === konamiCode.length) {
                     console.log("Konami code completed!");
                     activateRockstarMode();
-                    konamiIndex = 0; // Reset after completion
+                    konamiIndex = 0; 
                 }
             } else {
-                // Reset if wrong key is pressed
                 konamiIndex = 0;
             }
         });
 
-        // Enhanced activation function
         function activateRockstarMode() {
-            // Ensure audio is initialized
             if (!audioContext) initAudioContext();
             
-            // Mark as found in localStorage
             localStorage.setItem('easterEggFound', 'true');
             
-            // Create notification
             const eggNotification = document.createElement('div');
             eggNotification.className = 'easter-egg-notification';
             eggNotification.innerHTML = `
@@ -1472,15 +1406,12 @@
             `;
             document.body.appendChild(eggNotification);
             
-            // Visual effects
             document.body.style.filter = 'sepia(50%) hue-rotate(10deg) saturate(200%)';
             
-            // Play sound
             playSound(sounds.easterEgg, 0.5).then(() => {
                 console.log("Easter egg sound played");
             });
             
-            // Reset after 5 seconds
             setTimeout(() => {
                 document.body.style.filter = 'none';
                 if (eggNotification.parentNode) {
